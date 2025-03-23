@@ -11,10 +11,8 @@ let lightbox = new SimpleLightbox('.gallery a', {
 export function clearGallery() {
   gallery.innerHTML = ''; 
 }
-
 export function renderImages(images) {
   clearGallery(); 
-
   const markup = images.map(
       ({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => `
       <li class="gallery-item">
@@ -45,7 +43,6 @@ export function renderImages(images) {
       </li>`
     )
     .join('');
-
     gallery.innerHTML = markup;
     lightbox.refresh();
 }
